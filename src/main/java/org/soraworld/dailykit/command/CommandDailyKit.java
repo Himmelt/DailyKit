@@ -10,7 +10,7 @@ import org.soraworld.violet.inject.Inject;
 /**
  * @author Himmelt
  */
-@Command(name = "dailykit", usage = "/dailykit ")
+@Command(name = "dailykit", usage = "/dailykit buy|redeem|info")
 public final class CommandDailyKit {
 
     @Inject
