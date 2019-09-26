@@ -1,0 +1,17 @@
+# 中文语言文件(Chinese Language File)
+# 请使用 UTF-8 编码
+
+chatHead = "[每日礼包] "
+
+notEnoughPoints = "你没有足够的点券."
+notEnoughReward = "你没有足够的积分."
+infoRewards = "你当前的积分是: %d ."
+alreadyBuyToday = "今日你已购买过礼包."
+
+comment {
+  giveKitCommand = "给与礼包的命令, 用 ${player} 表示玩家名, ${name} 表示礼包名."
+  giveSpecialCommand = "给与积分道具的命令, 用 ${player} 表示玩家名, ${name} 表示道具名."
+  kitPrices = "礼包的价格. 名称 <-> 礼包价格"
+  kitRewards = "购买礼包获取的积分. 名称 <-> 获得积分"
+  specialPrices = "积分道具的价格. 名称 <-> 消费积分"
+}

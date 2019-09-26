@@ -1,0 +1,12 @@
+name: DailyKit
+version: ${version}
+author: Himmelt
+main: org.soraworld.dailykit.DailyKit
+depend:
+  - Violet
+  - PlayerPoints
+website: https://github.com/Himmelt/DailyKit
+description: DailyKit Plugin.
+permissions:
+  dailykit.admin:
+    default: op
