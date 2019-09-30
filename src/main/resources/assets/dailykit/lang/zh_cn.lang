@@ -6,7 +6,7 @@ chatHead = "[每日礼包] "
 notEnoughPoints = "你没有足够的点券."
 notEnoughReward = "你没有足够的积分."
 infoRewards = "你当前的积分是: %d ."
-alreadyBuyToday = "今日你已购买过礼包."
+alreadyBuyToday = "今日你已购买过 %s 礼包."
 
 comment {
   giveKitCommand = "给与礼包的命令, 用 ${player} 表示玩家名, ${name} 表示礼包名."
