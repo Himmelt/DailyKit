@@ -62,20 +62,22 @@ public class KitManager extends VManager {
     public void tryBuyKit(Player player, String name) {
         UUID uuid = player.getUniqueId();
         int today = Calendar.getInstance().get(Calendar.DAY_OF_YEAR);
-        int lastBuyDay = DataAPI.getStoreInt(uuid, LAST_BUYDAY_KEY, 0);
+        HashMap<String,Integer> lastBuyMap = DataAPI.getStore(uuid,LAST_BUYDAY_KEY,new HashMap<>(),HashMap.class);
+        int lastBuyDay = lastBuyMap.getOrDefault(name, 0);
         if (today != lastBuyDay) {
             String command = giveKitCommand.replaceAll("\\$\\{player}", player.getName()).replaceAll("\\$\\{name}", name);
             int price = kitPrices.getOrDefault(name, 0);
             if (pointsApi != null && pointsApi.take(uuid, price)) {
                 int reward = DataAPI.getStoreInt(uuid, KIT_REWARDS_KEY, 0);
                 DataAPI.setStore(uuid, KIT_REWARDS_KEY, reward + kitRewards.getOrDefault(name, 0));
-                DataAPI.setStore(uuid, LAST_BUYDAY_KEY, today);
+                lastBuyMap.put(name,today);
+                // DataAPI.setStore(uuid, LAST_BUYDAY_KEY, lastBuyMap);
                 Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), command);
             } else {
                 sendKey(player, "notEnoughPoints");
             }
         } else {
-            sendKey(player, "alreadyBuyToday");
+            sendKey(player, "alreadyBuyToday",name);
         }
     }
 
