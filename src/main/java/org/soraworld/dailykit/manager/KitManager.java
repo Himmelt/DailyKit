@@ -29,7 +29,7 @@ public class KitManager extends VManager {
     @Setting(comment = "comment.kitPrices")
     private final HashMap<String, Integer> kitPrices = new HashMap<>();
     @Setting(comment = "comment.kitRewards")
-    private HashMap<String, Integer> kitRewards = new HashMap<>();
+    private final HashMap<String, Integer> kitRewards = new HashMap<>();
     @Setting(comment = "comment.specialPrices")
     private final HashMap<String, Integer> specialPrices = new HashMap<>();
 
